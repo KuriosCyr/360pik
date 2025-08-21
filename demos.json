@@ -1,0 +1,273 @@
+[
+    {
+       "example":"Velo",
+       "dataHeight":400,
+       "sliderControl":false,
+       "dataWidth":600,
+       "productImagesSmall":"./images/Photo-Velo/small/",
+       "productImagesLarge":"./images/Photo-Velo/large/",
+       "detailsImages":"./images/Photo-Velo/details/",
+       "dataNaming":"velo-{frame_index}.jpg",
+       "dataCount":"[1, 40]",
+       "continous":true,
+       "dataStop":"1",
+       "dataTitle":[
+          "Velo",
+          "Bicycle",
+          ""
+       ],
+       "dataTitleAlign":"left",
+       "dataTitleBold":"300",
+       "dataTitleItalic":"normal",
+       "dataTitleSize":"16px",
+       "dataDescAlign":"left",
+       "dataDescBold":"300",
+       "dataDescItalic":"normal",
+       "dataDescSize":"12px",
+       "dataDescriptions":[
+          {
+             "start":0,
+             "end":20,
+             "description":[
+                "Velo 1",
+                "Bicycle 1",
+                ""
+             ]
+          },
+          {
+             "start":20,
+             "end":39,
+             "description":[
+                "Velo 2",
+                "Bicycle 2",
+                ""
+             ]
+          },
+          {
+             "start":0,
+             "end":0,
+             "description":[
+                "Velo 2",
+                "Bicycle 2",
+                ""
+             ]
+          },
+          {
+             "start":0,
+             "end":0,
+             "description":[
+                "Velo 2",
+                "Velo 2",
+                ""
+             ]
+          },
+          {
+             "start":0,
+             "end":0,
+             "description":[
+                "Velo 2",
+                "Velo 2",
+                ""
+             ]
+          },
+          {
+             "start":0,
+             "end":0,
+             "description":[
+                "Velo 2",
+                "Velo 2",
+                ""
+             ]
+          },
+          {
+             "start":0,
+             "end":0,
+             "description":[
+                "Velo 2",
+                "Velo 2",
+                ""
+             ]
+          },
+          {
+             "start":0,
+             "end":0,
+             "description":[
+                "Velo 2",
+                "Velo 2",
+                ""
+             ]
+          }
+       ],
+       "dataCommunication":[
+          {
+             "telephone":"0555 203204",
+             "email":"slash.spitfire@gmail.com",
+             "videoURL":"http://www.google.com/",
+             "customURL":"http://www.google.com/",
+             "contactPage":"http://www.google.com/",
+             "website":"http://www.google.com/"
+          },
+          {
+             "telephone":"en telephone",
+             "email":"en email",
+             "videoURL":"0555203204",
+             "customURL":"http://www.google.com/",
+             "contactPage":"0555 203204",
+             "website":"0555 203204"
+          },
+          {
+             "telephone":"en telephone",
+             "email":"en email",
+             "videoURL":"0555203204",
+             "customURL":"http://www.google.com/",
+             "contactPage":"0555 203204",
+             "website":"0555 203204"
+          }
+       ],
+       "dataSpecification":[
+          {
+             "download":"0555 203204",
+             "audio":"slash.spitfire@gmail.com",
+             "video":"http://www.google.com/",
+             "lien":"http://www.google.com/",
+             "shopping":"http://www.google.com/"
+          },
+          {
+             "download":"en telephone",
+             "audio":"en email",
+             "video":"0555203204",
+             "lien":"0555 203204",
+             "shopping":"0555 203204"
+          },
+          {
+             "download":"0555 203204",
+             "audio":"slash.spitfire@gmail.com",
+             "video":"http://www.google.com/",
+             "lien":"http://www.google.com/",
+             "shopping":"http://www.google.com/"
+          }
+       ]
+    },
+    {
+       "example":"Alternateur",
+       "dataHeight":1600,
+       "dataWidth":1600,
+       "sliderControl":false,
+       "productImagesSmall":"./images/Photo-Alternateur/small/",
+       "productImagesLarge":"./images/Photo-Alternateur/large/",
+       "detailsImages":"./images/Photo-Alternateur/details/",
+       "dataNaming":"Alternateur-{frame_index}.jpg",
+       "dataCount":"[1, 40]",
+       "continous":true,
+       "dataStop":3,
+       "dataTitle":[
+          "Alternateur",
+          "Alternator",
+          ""
+       ],
+       "dataTitleAlign":"left",
+       "dataTitleBold":"300",
+       "dataTitleItalic":"normal",
+       "dataTitleSize":"normal",
+       "dataDescAlign":"left",
+       "dataDescBold":"300",
+       "dataDescItalic":"normal",
+       "dataDescSize":"normal",
+       "dataDescriptions":[
+          {
+             "start":0,
+             "end":20,
+             "description":[
+                "Gateau 1",
+                "Cake 1",
+                ""
+             ]
+          },
+          {
+             "start":20,
+             "end":39,
+             "description":[
+                "Gateau 2",
+                "Cake 2",
+                ""
+             ]
+          },
+          {
+             "start":0,
+             "end":0,
+             "description":[
+                "Gateau 2",
+                "Cake 2",
+                ""
+             ]
+          },
+          {
+             "start":0,
+             "end":0,
+             "description":[
+                "Gateau 2",
+                "Cake 2",
+                ""
+             ]
+          },
+          {
+             "start":0,
+             "end":0,
+             "description":[
+                "Gateau 2",
+                "Cake 2",
+                ""
+             ]
+          }
+       ],
+       "dataCommunication":[
+          {
+             "telephone":"0555 203204",
+             "email":"slash.spitfire@gmail.com",
+             "videoURL":"http://www.google.com/",
+             "customURL":"http://www.google.com/",
+             "contactPage":"http://www.google.com/",
+             "website":"http://www.google.com/"
+          },
+          {
+             "telephone":"en telephone",
+             "email":"en email",
+             "videoURL":"0555203204",
+             "customURL":"http://www.google.com/",
+             "contactPage":"0555 203204",
+             "website":"0555 203204"
+          },
+          {
+             "telephone":"en telephone",
+             "email":"en email",
+             "videoURL":"0555203204",
+             "customURL":"http://www.google.com/",
+             "contactPage":"0555 203204",
+             "website":"0555 203204"
+          }
+       ],
+       "dataSpecification":[
+          {
+             "download":"0555 203204",
+             "audio":"slash.spitfire@gmail.com",
+             "video":"http://www.google.com/",
+             "lien":"http://www.google.com/",
+             "shopping":"http://www.google.com/"
+          },
+          {
+             "download":"en telephone",
+             "audio":"en email",
+             "video":"0555203204",
+             "lien":"0555 203204",
+             "shopping":"0555 203204"
+          },
+          {
+             "download":"en telephone",
+             "audio":"en email",
+             "video":"0555203204",
+             "lien":"0555 203204",
+             "shopping":"0555 203204"
+          }
+       ]
+    }
+ ]
