@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Constructeur-360PIK</title>
+  <title>360PIK - Constructeur</title>
   <link rel="icon" type="image/x-icon" href="https://ressources.revolutionnez.ca/assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/styles.css">
   <link rel="stylesheet" href="./assets/css/font-awesome.css">
   <link rel="stylesheet" href="./assets/css/lightgallery.min.css">
@@ -21,50 +24,15 @@
   <script src="https://unpkg.com/vue@3"></script>
   <script type="text/javascript" src="./js/jszip-utils.js"></script>
   <style>
-    .spinner-border {
-      width: 1rem;
-      height: 1rem;
-      margin-left: 4px;
-    }
-
-    .spritescontainer {
-      width: 100%;
-      height: auto;
-      margin-top: 1%;
-    }
-  </style>
-
-  <style>
+    .spritescontainer { width: 100%; height: auto; margin-top: 1%; }
     @media (max-width: 712px) {
-      .navbar-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-      }
+      .navbar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
     }
-
     @media (min-width: 711.98px) {
-      .navbar-grid {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-      }
+      .navbar-grid { display: grid; grid-template-columns: repeat(1, 1fr); }
     }
-
-    .nav-link {
-      margin: 5px -1px;
-      /* Ajustez ces valeurs pour obtenir l'espacement souhaité */
-    }
+    .nav-link { margin: 5px -1px; }
   </style>
-
-
-
-  <!--
-    Mandatory in IE 6, 7, 8 and 9.
-  -->
-  <!--[if IE]>
-    <script type="text/javascript" src="dist/jszip-utils-ie.js"></script>
-  <![endif]-->
-
-
 </head>
 
 <body>
@@ -89,7 +57,6 @@
                   type="button" role="tab" aria-controls="optPaid-tab-pane" aria-selected="false"
                   v-on:click="onChangeTab('PAID_OPTIONS')" :disabled="currentFolder.productImagesSmall.length === 0"
                   :style="{ opacity: currentFolder.productImagesSmall.length === 0 ? '0.5' : '1' }">
-                  <!-- <i class="fa fa-cart-plus fa-2x"></i> -->
                   <i class="fa fa-arrows-to-dot fa-2x"></i>
                   <span>OPTIMISATION DES PHOTOS</span>
                 </button>
@@ -280,24 +247,7 @@
                 <h6 class="text-center mb-4 text-muted">OPTIMISATION DES PHOTOS</h6><br>
                 <p>Choisissez le <b><u>niveau de compression</u></b> et vérifiez le résultat. </p>
 
-                <!-- Toggle for animation + gif + video -->
-                <!-- <div class="form-check form-switch mb-3">
-          <input class="form-check-input" type="checkbox" role="switch" id="animationGifVideo" v-model="currentFolder.animationGifVideo" style="width: 2rem; height: 1.50rem;">
-          <label class="form-check-label" for="animationGifVideo"><b>Activer la compression des photos, la création d'une vidéo MP4 et d'un gif animé pour vos médias sociaux</b></label>
-        </div> -->
-
-                <!--<div class="row">-->
-                <!--    <div class="col-md-12 d-flex justify-content-center">-->
-                <!--        <b v-if="currentFolder.animationGifVideo "> 12.95 $ CAD</b>-->
-                <!--        <b v-if="!currentFolder.animationGifVideo "> 0.00 $ CAD</b>-->
-                <!--    </div>-->
-                <!--</div>-->
-
                 <div class="row justify-content-between align-items-center mt-4">
-                  <!-- <div class="col-md-3">
-                                                <button type="button" class="btn btn-secondary btn-block mb-1">Payer la facture</button>
-                                                <button type="button" class="btn btn-secondary btn-block">Faire une avance</button>
-                                              </div> -->
                   <div class="col-md-3">
                     <select class="form-select form-select-sm mb-1" v-model="quality">
                       <option value="0" selected>Choisir un niveau de qualité</option>
@@ -465,11 +415,9 @@
               <div class="tab-pane fade p-4" id="pdtLink-tab-pane" role="tabpanel" aria-labelledby="pdtLink-tab"
                 tabindex="0">
                 <h6 class="text-center mb-4 text-muted">LIENS DU PRODUIT</h6>
-                <!-- Début de l'alerte pour la version autonome -->
                 <div class="alert alert-warning mt-4" role="alert">
-                  En version autonome, les liens ne seront pas disponibles.
+                  En version représentant, les liens ne seront pas disponibles.
                 </div>
-                <!-- Fin de l'alerte pour la version autonome -->
                 <div v-if="currentFolder.dataSpecification">
                   <div class="d-flex align-items-center justify-content-between">
                     <svg width="40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -500,7 +448,7 @@
                     </div>
                     <div class="input-group-append" role="button"
                       v-on:click="importData(currentFolder.dataSpecification, 'audio')">
-                      <span class="input-group-text" id="basic-addon2"><i class="fa fa-file"></i></span>
+                      <span class="input-group-text" id="basic-addon-audio"><i class="fa fa-file"></i></span>
                     </div>
                   </div>
                   <div class="d-flex align-items-center justify-content-between">
@@ -545,11 +493,9 @@
               <div class="tab-pane fade p-4" id="compaLink-tab-pane" role="tabpanel" aria-labelledby="compaLink-tab"
                 tabindex="0">
                 <h6 class="text-center mb-4 text-muted">LIENS DE L'ENTREPRISE</h6>
-                <!-- Début de l'alerte pour la version autonome -->
                 <div class="alert alert-warning mt-4" role="alert">
-                  En version autonome, les liens ne seront pas disponibles.
+                  En version représentant, les liens ne seront pas disponibles.
                 </div>
-                <!-- Fin de l'alerte pour la version autonome -->
                 <div v-if="currentFolder.dataCommunication">
                   <div class="d-flex align-items-center justify-content-between">
                     <svg width="40px" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -667,27 +613,6 @@
                         </div>
                       </div>
 
-                      <!-- <div class="col-md-6 mb-2">
-                        <div class="card service-card card-inverse text-secondary text-center" role="button"
-                          v-on:click="openConfirmModal('WEB'); generateAnimation();"
-                          v-bind:style="currentFolder.filename == '' ? 'pointer-events: none;' : 'pointer-events: visible;'">
-                          <div class="card-block d-flex justify-content-center align-items-center">
-                            <span class="fa fa-globe fa-2x" style="margin-right:20px;"></span>
-                            <h4 class="card-title">Version Web</h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-2">
-                        <div class="card service-card card-inverse text-secondary text-center" role="button"
-                          v-on:click="openConfirmModal('COMPANY'); generateAnimation();"
-                          v-bind:style="currentFolder.filename == '' ? 'pointer-events: none;' : 'pointer-events: visible;'">
-                          <div class="card-block d-flex justify-content-center align-items-center">
-                            <span class="fa fa-desktop fa-2x" style="margin-right:20px;"></span>
-                            <h4 class="card-title">Version Représentant</h4>
-                          </div>
-                        </div>
-                      </div> -->
-
                       <div class="col-md-6 mb-2">
                         <div class="card service-card card-inverse text-secondary text-center" role="button"
                           v-on:click="resetObj()">
@@ -736,8 +661,7 @@
               <a href="https://revolutionnez.ca/informations" target="_blank">Informations importantes</a>
             </h4>
 
-            <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true"
-              style="border-radius: 0.25rem;">&times;</button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
           </div>
           <div class="modal-body">
             <h4 v-text="selectedOnglet.title"></h4>
@@ -753,7 +677,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Confirmation de téléchargement</h4>
-            <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
           </div>
           <div class="modal-body">
             <p>Vous avez <b v-text="imagesCount"></b> images à télécharger</p>
@@ -762,7 +686,7 @@
             </p>
           </div>
           <div class="modal-footer d-flex justify-content-between align-items-center">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-hidden="true">Annuler</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Annuler</button>
             <button type="button" class="btn btn-secondary" v-on:click="uploadImages">Continuer le
               téléchargement</button>
           </div>
@@ -777,90 +701,40 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Confirmation de téléchargement</h4>
-            <button type="button" class="close" style="border-radius: 0.25rem;" data-bs-dismiss="modal"
-              aria-hidden="true">&times;</button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
           </div>
           <div class="modal-body">
-            <!-- <form id="confirm" v-if="!isDownLoading">
-                                    <div class="form-group">
-                                      <label for="exampleInputEmail1">Adresse courriel</label>
-                                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse courriel">
-                                      <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre adresse courriel avec d’autres entreprises.</small>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="exampleInputPassword1">Prénom et nom</label>
-                                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Prénom et nom">
-                                  </div>
-                                </form> -->
-            <div class="progress" style="width: 100%; height: 150%;">
-              <div class="progress-bar" role="progressbar" :style="{ width: animationDownloadProgress + '%' }"
-                :aria-valuenow="animationDownloadProgress" aria-valuemin="0" aria-valuemax="100">
-                <span class="progress-text" v-if="animationDownloadProgress < 25">
-                  {{ downloadMessage }}
-                </span>
-                <span class="progress-text"
-                  v-else-if="animationDownloadProgress >= 25 && animationDownloadProgress < 50">
-                  {{ downloadMessage }}
-                </span>
-                <span class="progress-text"
-                  v-else-if="animationDownloadProgress >= 50 && animationDownloadProgress < 75">
-                  {{ downloadMessage }}
-                </span>
-                <span class="progress-text" v-else>
-                  {{ downloadMessage }}
-                </span>
-                {{ animationDownloadProgress }}%
+            <div class="download-progress-panel" v-if="isDownLoading">
+              <div class="progress-phase-indicator">
+                <div class="phase-step" :class="{ active: downloadPhase === 'upload', done: downloadPhase === 'processing' || downloadPhase === 'download' || downloadPhase === 'done' }">
+                  <i class="fa fa-cloud-arrow-up"></i><span>Envoi</span>
+                </div>
+                <div class="phase-connector" :class="{ filled: downloadPhase === 'processing' || downloadPhase === 'download' || downloadPhase === 'done' }"></div>
+                <div class="phase-step" :class="{ active: downloadPhase === 'processing', done: downloadPhase === 'download' || downloadPhase === 'done' }">
+                  <i class="fa fa-gears"></i><span>Traitement</span>
+                </div>
+                <div class="phase-connector" :class="{ filled: downloadPhase === 'download' || downloadPhase === 'done' }"></div>
+                <div class="phase-step" :class="{ active: downloadPhase === 'download', done: downloadPhase === 'done' }">
+                  <i class="fa fa-download"></i><span>Fichier</span>
+                </div>
               </div>
+              <p class="progress-message">{{ downloadMessage }}</p>
+              <div class="progress progress-animated">
+                <div class="progress-bar"
+                  :class="{ 'progress-bar-striped progress-bar-animated': downloadPhase === 'processing' }"
+                  :style="{ width: animationDownloadProgress + '%' }">
+                </div>
+              </div>
+              <p class="progress-detail text-muted" v-if="animationDownloadProgress > 0">{{ animationDownloadProgress }}%</p>
             </div>
-
-
-
-            <!-- <div class="loading border mt-2 p-3 bg-light d-flex justify-content-between align-items-center" v-if="isDownLoading">
-                                  <div>
-                                    <h6>{{ downloadMessage }}</h6>
-                                    <div class="progress" style="width: 100%;">
-                                      <div
-                                      class="progress-bar"
-                                      role="progressbar"
-                                      :style="{ width: animationDownloadProgress + '%' }"
-                                      :aria-valuenow="animationDownloadProgress"
-                                      aria-valuemin="0"
-                                      aria-valuemax="100"
-                                      >
-                                      Animation : {{ animationDownloadProgress }}%
-                                    </div>
-                                  </div>
-                      </div>
-                    </div> -->
-
-
           </div>
           <div class="modal-footer d-flex justify-content-between align-items-center" v-if="!isDownLoading">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-hidden="true"
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
               :disabled="isDownLoading">Annuler</button>
-            <!-- <button type="button" class="btn btn-secondary" v-on:click="generateAnimation" :disabled="isDownLoading">Télécharger</button> -->
           </div>
         </div>
-        <!-- /.modal-content -->
       </div>
-      <!-- /.modal-dialog -->
     </div>
-    <!--   <div class="modal modal-lg fade" id="downloadModal" data-bs-backdrop="false" style="max-width: 100% !important;">
-    <div class="modal-dialog" style="max-width: 33% !important;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Confirmation de téléchargement</h4>  
-                <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-                <iframe src="https://zc.vg/sf/eWRid" style="width: 100%; height: 500px; border: none;"></iframe>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-            </div>
-        </div>
-    </div>
-  </div> -->
 
     <div class="modal modal-fullscreen fade" id="optimisationModal" data-bs-backdrop="false"
       style="max-width: 100% !important;">
@@ -868,8 +742,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h6 class="modal-title">Test d'optimization</h6>
-            <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true"
-              style="border-radius: 0.25rem;">&times;</button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
           </div>
           <div class="modal-body text-center">
             <h5 v-text="originalSizes[0]"></h5>
@@ -877,8 +750,7 @@
             <div id="canvas"></div>
           </div>
           <div class="modal-footer d-flex justify-content-between align-items-center">
-            <button type="button" style="border-radius: 0.25rem;" class="btn btn-secondary" data-bs-dismiss="modal"
-              aria-hidden="true">Annuler</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
           </div>
         </div>
         <!-- /.modal-content -->
@@ -1174,8 +1046,8 @@
           type: "",
           isDownLoading: false,
           animationDownloadProgress: 0,
-          gifDownloadProgress: 0,
-          videoDownloadProgress: 0,
+          downloadPhase: "upload",
+          processingInterval: null,
           downloadMessage: "Téléchargement de l'animation en cours...",
           rotationMessage: 'Orientation normale',
           animationGifVideo: true,
@@ -1264,7 +1136,7 @@
 
         },
         checkMove: function (e) {
-          window.console.log("Future index: " + e.draggedContext.futureIndex);
+          // drag-and-drop reorder handler
         },
         showVideoOrAudio() {
           $("#assets-modal").removeClass("d-none").addClass("d-block");
@@ -1287,11 +1159,6 @@
         hideModal() {
           state.modal_confirm.hide()
         },
-        // openConfirmModal(type) {
-        //   this.type = type;
-        //   state.modal_download.show();
-        //   console.log("Type : ", this.type)
-        // },
         openConfirmModal(type) {
           this.type = type;
 
@@ -1361,18 +1228,12 @@
           $('.360spin').attr('data-inverse', this.inverseState);
 
           var hs = document.getElementsByTagName('style');
-          // console.log("hs array:", hs);
           for (var i = 0, max = hs.length; i < max; i++) {
-            // console.log("Current hs[i]:", hs[i]);
             if (hs[i] && hs[i].parentNode) {
               hs[i].parentNode.removeChild(hs[i]);
             }
           }
 
-          // var hs = document.getElementsByTagName('style');
-          // for (var i=0, max = hs.length; i < max; i++) {
-          //     hs[i].parentNode.removeChild(hs[i]);
-          // }
           const styles = `
     .slider::-webkit-slider-thumb {
       background: ${this.color} !important;
@@ -1399,14 +1260,9 @@
           e.preventDefault();
 
           var api = $('.spritescontainer').spritespin('api');
-          var totalFrames = api.data.source.length;  // nombre total de frames
-          console.log("Total frames:", totalFrames);
-
-          var rotations = this.currentFolder.dataStop;  // rotations définies par l'utilisateur
-          console.log("Rotations:", rotations);
-
-          var initialFrames = rotations * totalFrames;  // calcule le nombre total de frames à avancer en fonction des rotations
-          console.log("Initial frames:", initialFrames);
+          var totalFrames = api.data.source.length;
+          var rotations = this.currentFolder.dataStop;
+          var initialFrames = rotations * totalFrames;
 
           // Clear any previous timeouts and intervals
           if (this.animationTimeout) {
@@ -1425,8 +1281,6 @@
             api.updateFrame(0);
             api.stopAnimation();
           }, initialFrames * api.data.frameTime);
-
-          console.log("dataStop", this.currentFolder.dataStop);
         },
 
         onChangeTab(tab) {
@@ -1584,9 +1438,6 @@
               else {
                 this.currentFolder.detailsImages = res.data.result.details ? [...this.currentFolder.detailsImages, ...res.data.result.details] : [];
                 this.detailListOfIndex = this.currentFolder.detailsImages.map(({ }, idx) => idx);
-
-                console.log('detailsImages:', Vue.toRaw(this.currentFolder.detailsImages));
-                console.log('detailListOfIndex:', Vue.toRaw(this.detailListOfIndex));
 
 
               }
@@ -1762,8 +1613,9 @@
             this.quality = 1;
           }
           this.isDownLoading = true;
-          this.downloadMessage = "Génération de l'animation en cours...";
-          this.animationDownloadProgress = 25; // Initialisation de la progression
+          this.animationDownloadProgress = 0;
+          this.downloadPhase = "upload";
+          this.downloadMessage = "Envoi des données au serveur...";
 
           let payload = {
             type: this.type,
@@ -1808,9 +1660,28 @@
             payload,
             {
               responseType: 'blob',
-              onDownloadProgress: (progressEvent) => {
+              onUploadProgress: (progressEvent) => {
                 if (progressEvent.total > 0) {
-                  this.animationDownloadProgress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                  const pct = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                  this.animationDownloadProgress = Math.round(pct * 0.40);
+                  this.downloadMessage = `Envoi des données... ${pct}%`;
+                }
+                if (progressEvent.loaded === progressEvent.total) {
+                  this.downloadPhase = "processing";
+                  this.downloadMessage = "Le serveur génère votre animation...";
+                  this.animationDownloadProgress = 40;
+                  this.startProcessingProgress();
+                }
+              },
+              onDownloadProgress: (progressEvent) => {
+                this.stopProcessingProgress();
+                this.downloadPhase = "download";
+                this.downloadMessage = "Réception du fichier...";
+                if (progressEvent.total > 0) {
+                  const pct = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                  this.animationDownloadProgress = 70 + Math.round(pct * 0.30);
+                } else {
+                  this.animationDownloadProgress = 85;
                 }
               },
             }
@@ -1823,9 +1694,9 @@
               });
             }
 
-            // Si ce n'est pas une erreur JSON, continuer avec le traitement normal
-            this.downloadMessage = "Téléchargement en cours...";
-            this.animationDownloadProgress = 75;
+            this.downloadPhase = "done";
+            this.animationDownloadProgress = 100;
+            this.downloadMessage = "Téléchargement terminé !";
 
             const url = window.URL.createObjectURL(new Blob([res.data]));
             const link = document.createElement('a');
@@ -1833,27 +1704,24 @@
             link.setAttribute('download', this.currentFolder.filename + '.zip');
             document.body.appendChild(link);
             link.click();
+            window.URL.revokeObjectURL(url);
 
             return JSZip.loadAsync(res.data);
           }).then((zip) => {
-            this.downloadMessage = "Traitement des données...";
-            this.animationDownloadProgress = 90;
             return zip.file('solde_restant_informations_confidentielles.txt').async('string');
           }).then((soldeContent) => {
             this.remainingBalance = soldeContent;
-            this.downloadMessage = "Téléchargement terminé.";
-            this.animationDownloadProgress = 100;
             alert(`Téléchargement terminé. Solde restant: ${soldeContent}`);
 
-            // Fermer le modal ici
-            this.isDownLoading = false;
-            state.modal_download.hide();
+            setTimeout(() => {
+              this.isDownLoading = false;
+              state.modal_download.hide();
+            }, 1500);
           }).catch((error) => {
+            this.stopProcessingProgress();
             this.isDownLoading = false;
             this.animationDownloadProgress = 0;
-            state.modal_download.hide(); // Assurer de fermer le modal même en cas d'erreur
-
-            console.error("Erreur lors du téléchargement:", error);
+            state.modal_download.hide();
 
             if (error.message) {
               if (error.message.includes("Customer ID manquant")) {
@@ -1870,464 +1738,19 @@
             }
           });
         },
-        // generateAnimation() {
-        //   if (this.quality === 0) {
-        //     this.quality = 1;
-        //   }
-        //   this.isDownLoading = true;
-        //   this.downloadMessage = "Génération de l'animation en cours...";
-        //   this.animationDownloadProgress = 25; // Initialisation de la progression
-
-        //   let payload = {
-        //     type: this.type,
-        //     inverse: this.inverseState,
-        //     color: this.color,
-        //     foreground: this.foreground,
-        //     customerId: this.customerId,
-        //     titlealignment: this.currentFolder.dataTitleAlign,
-        //     descalignment: this.currentFolder.dataDescAlign,
-        //     titlebold: this.currentFolder.dataTitleBold,
-        //     titleitalic: this.currentFolder.dataTitleItalic,
-        //     titlesize: this.currentFolder.dataTitleSize,
-        //     descbold: this.currentFolder.dataDescBold,
-        //     descitalic: this.currentFolder.dataDescItalic,
-        //     descsize: this.currentFolder.dataDescSize,
-        //     height: this.currentFolder.dataHeight,
-        //     width: this.currentFolder.dataWidth,
-        //     folder: this.currentFolder.dataFolder,
-        //     zoom: this.currentFolder.dataZoom,
-        //     naming: this.currentFolder.dataNaming,
-        //     count: this.currentFolder.dataCount,
-        //     slidercontrol: this.currentFolder.sliderControl,
-        //     mode: 'NEW',
-        //     lang: 'fr',
-        //     initialRotations: this.currentFolder.continous ? 0 : this.currentFolder.dataStop,
-        //     title: this.currentFolder.dataTitle,
-        //     descriptions: this.currentFolder.dataDescriptions,
-        //     communication: this.currentFolder.dataCommunication,
-        //     specification: this.currentFolder.dataSpecification,
-        //     images: this.currentFolder.productImagesSmall,
-        //     large: this.currentFolder.productImagesLarge,
-        //     details: this.currentFolder.detailsImages,
-        //     filename: this.currentFolder.filename,
-        //     animationGifVideo: this.currentFolder.animationGifVideo,
-        //     quality: this.quality,
-        //     frameTime: this.frameTime,
-        //     rotation: this.rotation,
-        //     animationGifVideo: true
-        //   };
-
-        //   axios.post(
-        //     'https://dev-photo.revolutionnez.ca/api/generate-animation',
-        //     payload,
-        //     {
-        //       responseType: 'blob',
-        //       onDownloadProgress: (progressEvent) => {
-        //         if (progressEvent.total > 0) {
-        //           this.animationDownloadProgress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-        //         }
-        //       },
-        //     }
-        //   ).then((res) => {
-        //     this.downloadMessage = "Téléchargement en cours...";
-        //     this.animationDownloadProgress = 75;
-
-        //     const url = window.URL.createObjectURL(new Blob([res.data]));
-        //     const link = document.createElement('a');
-        //     link.href = url;
-        //     link.setAttribute('download', this.currentFolder.filename + '.zip');
-        //     document.body.appendChild(link);
-        //     link.click();
-
-        //     return JSZip.loadAsync(res.data);
-        //   }).then((zip) => {
-        //     this.downloadMessage = "Traitement des données...";
-        //     this.animationDownloadProgress = 90;
-        //     return zip.file('solde_restant_informations_confidentielles.txt').async('string');
-        //   }).then((soldeContent) => {
-        //     this.remainingBalance = soldeContent;
-        //     this.downloadMessage = "Téléchargement terminé.";
-        //     this.animationDownloadProgress = 100;
-        //     alert(`Téléchargement terminé. Solde restant: ${soldeContent}`);
-
-        //     // Fermer le modal ici
-        //     this.isDownLoading = false;
-        //     state.modal_download.hide();
-        //   }).catch((error) => {
-        //     this.isDownLoading = false;
-        //     this.animationDownloadProgress = 0;
-        //     state.modal_download.hide(); // Assurez-vous de fermer le modal même en cas d'erreur
-
-        //     console.error("Erreur lors du téléchargement:", error);
-
-        //     if (error.response && error.response.data) {
-        //       const errorMessage = error.response.data.message;
-        //       if (errorMessage.includes("Customer ID manquant")) {
-        //         alert("Erreur : ID client manquant.");
-        //       } else if (errorMessage.includes("ID client incorrect")) {
-        //         alert("Erreur : L'ID client est incorrect. Veuillez vérifier et réessayer.");
-        //       } else if (errorMessage.includes("Solde insuffisant")) {
-        //         alert("Erreur : Solde insuffisant. Veuillez recharger votre compte.");
-        //       } else {
-        //         alert(`Erreur : ${errorMessage}`);
-        //       }
-        //     } else {
-        //       alert("Erreur lors du téléchargement.");
-        //     }
-        //   });
-        // },
-
-        //         checkBalanceAndGenerate() {
-        //   // Afficher le modal de téléchargement directement et commencer à générer l'animation
-        //   state.modal_download.show(); // Afficher le modal de téléchargement
-        //   this.generateAnimation();
-        // },
-        // generateAnimation() {
-        //   if (this.quality === 0) {
-        //     this.quality = 1;
-        //   }
-        //   this.isDownLoading = true;
-        //   let currentStep = 1;
-
-        //   const generateStep = () => {
-        //     if (currentStep <= progressSteps.length) {
-        //       this.animationDownloadProgress = progressSteps[currentStep - 1];
-        //       switch (currentStep) {
-        //         case 1:
-        //           this.downloadMessage = "Génération de l'animation en cours...";
-        //           break;
-        //         case 2:
-        //           this.downloadMessage = "Génération du GIF en cours...";
-        //           break;
-        //         case 3:
-        //           this.downloadMessage = "Génération de la vidéo en cours...";
-        //           break;
-        //         case 4:
-        //           this.downloadMessage = "Compilation du résultat en cours...";
-        //           break;
-        //       }
-        //       currentStep++;
-        //       setTimeout(generateStep, 1000);
-        //     } else {
-        //       this.downloadMessage = "Téléchargement terminé.";
-        //       this.animationDownloadProgress = 0;
-        //       this.isDownLoading = false;
-        //       this.hideConfirmModal();
-        //     }
-        //   };
-
-        //   let payload = {
-        //     type: this.type,
-        //     inverse: this.inverseState,
-        //     color: this.color,
-        //     foreground: this.foreground,
-        //     customerId: this.customerId,
-        //     titlealignment: this.currentFolder.dataTitleAlign,
-        //     descalignment: this.currentFolder.dataDescAlign,
-        //     titlebold: this.currentFolder.dataTitleBold,
-        //     titleitalic: this.currentFolder.dataTitleItalic,
-        //     titlesize: this.currentFolder.dataTitleSize,
-        //     descbold: this.currentFolder.dataDescBold,
-        //     descitalic: this.currentFolder.dataDescItalic,
-        //     descsize: this.currentFolder.dataDescSize,
-        //     height: this.currentFolder.dataHeight,
-        //     width: this.currentFolder.dataWidth,
-        //     folder: this.currentFolder.dataFolder,
-        //     zoom: this.currentFolder.dataZoom,
-        //     naming: this.currentFolder.dataNaming,
-        //     count: this.currentFolder.dataCount,
-        //     slidercontrol: this.currentFolder.sliderControl,
-        //     mode: 'NEW',
-        //     lang: 'fr',
-        //     initialRotations: this.currentFolder.continous ? 0 : this.currentFolder.dataStop,
-        //     title: this.currentFolder.dataTitle,
-        //     descriptions: this.currentFolder.dataDescriptions,
-        //     communication: this.currentFolder.dataCommunication,
-        //     specification: this.currentFolder.dataSpecification,
-        //     images: this.currentFolder.productImagesSmall,
-        //     large: this.currentFolder.productImagesLarge,
-        //     details: this.currentFolder.detailsImages,
-        //     filename: this.currentFolder.filename,
-        //     animationGifVideo: this.currentFolder.animationGifVideo,
-        //     quality: this.quality,
-        //     frameTime: this.frameTime,
-        //     rotation: this.rotation,
-        //     animationGifVideo: true
-        //   };
-
-        //   axios.post(
-        //     'https://dev-photo.revolutionnez.ca/api/generate-animation',
-        //     payload,
-        //     {
-        //       responseType: 'blob',
-        //       onDownloadProgress: (progressEvent) => {
-        //         if (progressEvent.total > 0) {
-        //           this.animationDownloadProgress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-        //         } else {
-        //           this.animationDownloadProgress = 0;
-        //         }
-        //       },
-        //     }
-        //   ).then((res) => {
-        //     const animationPromise = new Promise((resolve) => {
-        //       const url = window.URL.createObjectURL(new Blob([res.data]));
-        //       const link = document.createElement('a');
-        //       link.href = url;
-        //       link.setAttribute('download', this.currentFolder.filename + '.zip');
-        //       document.body.appendChild(link);
-        //       link.click();
-        //       resolve(res.data); 
-        //     });
-
-        //     return animationPromise;
-        //   }).then((zipBlob) => {
-        //     return JSZip.loadAsync(zipBlob).then((zip) => {
-        //       return zip.file('solde_restant_informations_confidentielles.txt').async('string');
-        //     }).then((soldeContent) => {
-        //       this.remainingBalance = soldeContent; 
-        //       alert(`Téléchargement terminé. Solde restant: ${soldeContent}`);
-        //     }).catch((error) => {
-        //       console.error("Erreur lors de la lecture du fichier ZIP :", error);
-        //       throw error; // Propager l'erreur pour qu'elle soit gérée dans le bloc catch suivant
-        //     });
-        //   }).then(() => {
-        //     generateStep();
-        //   }).catch((error) => {
-        //     this.isDownLoading = false;
-        //     this.animationDownloadProgress = 0;
-
-        //     if (error.response && error.response.data) {
-        //       const errorMessage = error.response.data.message;
-        //       if (errorMessage.includes("Customer ID manquant")) {
-        //         alert("Erreur : ID client manquant.");
-        //       } else if (errorMessage.includes("ID client incorrect")) {
-        //         alert("Erreur : L'ID client est incorrect. Veuillez vérifier et réessayer.");
-        //       } else if (errorMessage.includes("Solde insuffisant")) {
-        //         alert("Erreur : Solde insuffisant. Veuillez recharger votre compte.");
-        //       } else {
-        //         alert(`Erreur : ${errorMessage}`);
-        //       }
-        //     } else if (error.message && error.message.includes("Erreur lors de la lecture du fichier ZIP")) {
-        //       // Ne pas afficher d'alerte supplémentaire si l'erreur vient de la lecture du ZIP
-        //       console.error("Erreur lors de la lecture du fichier ZIP");
-        //     } 
-        //   });
-        // },
-
-
-        // generateAnimation() {
-        //   if (this.quality === 0) {
-        //     this.quality = 1;
-        //   }
-        //   this.isDownLoading = true;
-        //   let currentStep = 1;
-
-        //   // Définir la progression de chaque étape
-        //   const progressSteps = [25, 50, 75, 100];
-
-        //   const generateStep = () => {
-        //     if (currentStep <= progressSteps.length) {
-        //       this.animationDownloadProgress = progressSteps[currentStep - 1];
-        //       switch (currentStep) {
-        //         case 1:
-        //           this.downloadMessage = "Génération de l'animation en cours...";
-        //           break;
-        //         case 2:
-        //           this.downloadMessage = "Génération du GIF en cours...";
-        //           break;
-        //         case 3:
-        //           this.downloadMessage = "Génération de la vidéo en cours...";
-        //           break;
-        //         case 4:
-        //           this.downloadMessage = "Compilation du résultat en cours...";
-        //           break;
-        //       }
-        //       currentStep++;
-        //       setTimeout(generateStep, 1000); // Progression chaque seconde (ajustez selon vos besoins)
-        //     } else {
-        //       this.downloadMessage = "Téléchargement terminé.";
-        //       this.animationDownloadProgress = 0; // Réinitialiser la barre de progression
-        //       this.isDownLoading = false;
-        //       this.hideConfirmModal();
-        //     }
-        //   };
-
-        //   // Création du payload avec les données nécessaires
-        //   let payload = {
-        //     type: this.type,
-        //     inverse: this.inverseState,
-        //     color: this.color,
-        //     foreground: this.foreground,
-        //     customerId: this.customerId,
-        //     titlealignment: this.currentFolder.dataTitleAlign,
-        //     descalignment: this.currentFolder.dataDescAlign,
-        //     titlebold: this.currentFolder.dataTitleBold,
-        //     titleitalic: this.currentFolder.dataTitleItalic,
-        //     titlesize: this.currentFolder.dataTitleSize,
-        //     descbold: this.currentFolder.dataDescBold,
-        //     descitalic: this.currentFolder.dataDescItalic,
-        //     descsize: this.currentFolder.dataDescSize,
-        //     height: this.currentFolder.dataHeight,
-        //     width: this.currentFolder.dataWidth,
-        //     folder: this.currentFolder.dataFolder,
-        //     zoom: this.currentFolder.dataZoom,
-        //     naming: this.currentFolder.dataNaming,
-        //     count: this.currentFolder.dataCount,
-        //     slidercontrol: this.currentFolder.sliderControl,
-        //     mode: 'NEW',
-        //     lang: 'fr',
-        //     initialRotations: this.currentFolder.continous ? 0 : this.currentFolder.dataStop,
-        //     title: this.currentFolder.dataTitle,
-        //     descriptions: this.currentFolder.dataDescriptions,
-        //     communication: this.currentFolder.dataCommunication,
-        //     specification: this.currentFolder.dataSpecification,
-        //     images: this.currentFolder.productImagesSmall,
-        //     large: this.currentFolder.productImagesLarge,
-        //     details: this.currentFolder.detailsImages,
-        //     filename: this.currentFolder.filename,
-        //     animationGifVideo: this.currentFolder.animationGifVideo
-        //   };
-
-        //   // Ajouter les nouvelles valeurs à l'objet payload existant
-        //   payload = {
-        //     ...payload,
-        //     quality: this.quality,
-        //     frameTime: this.frameTime,
-        //     rotation: this.rotation,
-        //     animationGifVideo: this.animationGifVideo,
-        //   };
-
-        //   console.log(`FrameTime before axios call: ${this.frameTime}`);
-        //   console.log(`Animation before axios call: ${this.animationGifVideo}`);
-
-        //   axios.post(
-        //     'https://dev-photo.revolutionnez.ca/api/generate-animation',
-        //     payload,
-        //     {
-        //       responseType: 'blob',
-        //       onDownloadProgress: (progressEvent) => {
-        //         if (progressEvent.total > 0) {
-        //           this.animationDownloadProgress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-        //           console.log('animationDownloadProgress:', this.animationDownloadProgress);
-        //         } else {
-        //           this.animationDownloadProgress = 0;
-        //         }
-        //       },
-        //     }).then((res) => {
-        //       const animationPromise = new Promise((resolve) => {
-        //         const url = window.URL.createObjectURL(new Blob([res.data]));
-        //         const link = document.createElement('a');
-        //         link.href = url;
-        //         link.setAttribute('download', this.currentFolder.filename + '.zip');
-        //         document.body.appendChild(link);
-        //         link.click();
-        //         resolve();
-        //       });
-
-        //       return animationPromise;
-        //     }).then(() => {
-        //       generateStep(); // Déclencher la progression après le téléchargement
-        //       return axios.post('https://dev-photo.revolutionnez.ca/api/verify-balance', { customerId: this.customerId });
-        //     }).then((verifyRes) => {
-        //       if (verifyRes.data.success) {
-        //         this.remainingBalance = verifyRes.data.balance; // Mettre à jour le solde restant
-        //         console.log("Solde restant après génération:", this.remainingBalance);
-        //         alert(`Téléchargement terminé. Solde restant: ${this.remainingBalance}`);
-        //       } else {
-        //         console.error("Erreur lors de la vérification du solde:", verifyRes.data.message);
-        //       }
-        //     }).catch((error) => {
-        //       console.error("Erreur lors de la génération ou de la vérification du solde:", error);
-        //     });
-        // },
-
-        // generateAnimation() {
-        //   if (this.quality === 0) {
-        //     this.quality = 1;
-        //   }
-        //   this.isDownLoading = true;
-        //   let payload = {
-        //     type: this.type,
-        //         // frametime: this.frameTime,
-        //     inverse: this.inverseState,
-        //     color: this.color,
-        //     foreground: this.foreground,
-        //     titlealignment: this.currentFolder.dataTitleAlign,
-        //     descalignment: this.currentFolder.dataDescAlign,
-        //     titlebold: this.currentFolder.dataTitleBold,
-        //     titleitalic: this.currentFolder.dataTitleItalic,
-        //     titlesize: this.currentFolder.dataTitleSize,
-        //     descbold: this.currentFolder.dataDescBold,
-        //     descitalic: this.currentFolder.dataDescItalic,
-        //     descsize: this.currentFolder.dataDescSize,
-        //     height: this.currentFolder.dataHeight,
-        //     width: this.currentFolder.dataWidth,
-        //     folder: this.currentFolder.dataFolder,
-        //     zoom: this.currentFolder.dataZoom,
-        //     naming: this.currentFolder.dataNaming,
-        //     count: this.currentFolder.dataCount,
-        //     slidercontrol: this.currentFolder.sliderControl,
-        //     mode: 'NEW',
-        //     lang: 'fr',
-        //         // stop: this.currentFolder.continous == true ? 0 :this.currentFolder.dataStop,
-        //     initialRotations: this.currentFolder.continous == true ? 0 :this.currentFolder.dataStop,
-        //     title: this.currentFolder.dataTitle,
-        //     descriptions: this.currentFolder.dataDescriptions,
-        //     communication: this.currentFolder.dataCommunication,
-        //     specification: this.currentFolder.dataSpecification,
-        //     images: this.currentFolder.productImagesSmall,
-        //     large: this.currentFolder.productImagesLarge,
-        //     details: this.currentFolder.detailsImages,
-        //     filename:this.currentFolder.filename,
-        //         // quality: this.quality,
-        //     animationGifVideo: this.currentFolder.animationGifVideo
-        //   }
-
-        // // Ajoutez les nouvelles valeurs à l'objet payload existant
-        //   payload = {
-        //     ...payload,
-        //     quality: this.quality,
-        //     frameTime: this.frameTime,
-        //     rotation: this.rotation,
-        //     animationGifVideo: this.animationGifVideo,
-        //   };
-        //   console.log(`FrameTime before axios call: ${this.frameTime}`);
-        //   console.log(`Animation before axios call: ${this.animationGifVideo}`);
-
-
-        //   axios.post(
-        //     'https://photo.revolutionnez.ca/api/generate-animation',
-        //     payload,
-        //     {
-        //       responseType: 'blob',
-        //       onDownloadProgress: (progressEvent) => {
-        //         if (progressEvent.total > 0) {
-        //           this.animationDownloadProgress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-        //           console.log('animationDownloadProgress:', this.animationDownloadProgress);
-        //         } else {
-        //           this.animationDownloadProgress = 0;
-        //         }
-        //       },
-        //     }).then((res) => {
-        //       const animationPromise = new Promise((resolve) => {
-        //         const url = window.URL.createObjectURL(new Blob([res.data]));
-        //         const link = document.createElement('a');
-        //         link.href = url;
-        //         link.setAttribute('download', this.currentFolder.filename + '.zip');
-        //         document.body.appendChild(link);
-        //         link.click();
-        //         resolve();
-        //       });
-
-
-        //       return animationPromise;
-        //     }).then(() => {
-        //       this.isDownLoading = false;
-        //       this.hideConfirmModal();
-        //     });
-
-        //   },
-
+        startProcessingProgress() {
+          this.processingInterval = setInterval(() => {
+            if (this.animationDownloadProgress < 68) {
+              this.animationDownloadProgress += 1;
+            }
+          }, 3000);
+        },
+        stopProcessingProgress() {
+          if (this.processingInterval) {
+            clearInterval(this.processingInterval);
+            this.processingInterval = null;
+          }
+        },
         addStyle(styles) {
 
           /* Create style document */
